@@ -1,4 +1,6 @@
 <?php
+namespace PhpDiff;
+use PhpDiff\Renderer\RendererAbstract;
 /**
  * Diff
  *
@@ -95,7 +97,7 @@ class Diff
 	 * @param object $renderer An instance of the rendering object to use for generating the diff.
 	 * @return mixed The generated diff. Exact return value depends on the rendered.
 	 */
-	public function render(Diff_Renderer_Abstract $renderer)
+	public function render(RendererAbstract $renderer)
 	{
 		$renderer->diff = $this;
 		return $renderer->render();
@@ -173,4 +175,12 @@ class Diff
 		$this->groupedCodes = $sequenceMatcher->getGroupedOpcodes();
 		return $this->groupedCodes;
 	}
+
+	public static function autoloadRegister(){
+		define('CLASS_DIR', realpath(dirname(__FILE__) . '/../'));
+		set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
+		spl_autoload_extensions('.class.php');
+		spl_autoload_register();
+	}
+
 }

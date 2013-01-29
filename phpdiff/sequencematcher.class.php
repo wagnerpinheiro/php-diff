@@ -1,5 +1,5 @@
 <?php
-namespace sfPhpDiff;
+namespace PhpDiff;
 /**
  * Sequence matcher for Diff
  *

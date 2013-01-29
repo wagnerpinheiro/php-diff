@@ -11,9 +11,6 @@
 		<hr />
 		<?php
 
-		// Include the diff class
-		require_once dirname(__FILE__).'/../lib/Diff.php';
-
 		// Include two sample files for comparison
 		$a = explode("\n", file_get_contents(dirname(__FILE__).'/a.txt'));
 		$b = explode("\n", file_get_contents(dirname(__FILE__).'/b.txt'));
@@ -24,16 +21,19 @@
 			//'ignoreCase' => true,
 		);
 
+		require_once('../phpdiff/diff.class.php');
+		\PhpDiff\Diff::autoloadRegister();
+
 		// Initialize the diff class
-		$diff = new Diff($a, $b, $options);
+		$diff = new \PhpDiff\Diff($a, $b, $options);
 
 		?>
 		<h2>Side by Side Diff</h2>
 		<?php
 
 		// Generate a side by side diff
-		require_once dirname(__FILE__).'/../lib/Diff/Renderer/Html/SideBySide.php';
-		$renderer = new Diff_Renderer_Html_SideBySide;
+		//require_once dirname(__FILE__).'/../lib/Diff/Renderer/Html/SideBySide.php';
+		$renderer = new \PhpDiff\Renderer\Html\RendererSideBySide();
 		echo $diff->Render($renderer);
 
 		?>
@@ -41,8 +41,8 @@
 		<?php
 
 		// Generate an inline diff
-		require_once dirname(__FILE__).'/../lib/Diff/Renderer/Html/Inline.php';
-		$renderer = new Diff_Renderer_Html_Inline;
+		//require_once dirname(__FILE__).'/../lib/Diff/Renderer/Html/Inline.php';
+		$renderer = new \PhpDiff\Renderer\Html\RendererInline();
 		echo $diff->render($renderer);
 
 		?>
@@ -50,8 +50,8 @@
 		<pre><?php
 
 		// Generate a unified diff
-		require_once dirname(__FILE__).'/../lib/Diff/Renderer/Text/Unified.php';
-		$renderer = new Diff_Renderer_Text_Unified;
+		//require_once dirname(__FILE__).'/../lib/Diff/Renderer/Text/Unified.php';
+		$renderer = new \PhpDiff\Renderer\Text\RendererUnified();
 		echo htmlspecialchars($diff->render($renderer));
 
 		?>
@@ -60,8 +60,8 @@
 		<pre><?php
 
 		// Generate a context diff
-		require_once dirname(__FILE__).'/../lib/Diff/Renderer/Text/Context.php';
-		$renderer = new Diff_Renderer_Text_Context;
+		//require_once dirname(__FILE__).'/../lib/Diff/Renderer/Text/Context.php';
+		$renderer = new \PhpDiff\Renderer\Text\RendererContext();
 		echo htmlspecialchars($diff->render($renderer));
 		?>
 		</pre>

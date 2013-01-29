@@ -1,6 +1,6 @@
 <?php
-namespace sfPhpDiff\Renderer\Text;
-use sfPhpDiff\Renderer\RendererAbstract;
+namespace PhpDiff\Renderer\Text;
+use PhpDiff\Renderer\RendererAbstract;
 /**
  * Context diff generator for PHP DiffLib.
  *

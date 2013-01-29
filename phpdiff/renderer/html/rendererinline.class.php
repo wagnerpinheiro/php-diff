@@ -1,4 +1,6 @@
 <?php
+namespace PhpDiff\Renderer\Html;
+use PhpDiff\Renderer\RendererAbstract;
 /**
  * Inline HTML diff generator for PHP DiffLib.
  *
@@ -40,7 +42,7 @@
  * @link http://github.com/chrisboulton/php-diff
  */
 
-require_once dirname(__FILE__).'/Array.php';
+//require_once dirname(__FILE__).'/Array.php';
 
 class RendererInline extends RendererArray
 {

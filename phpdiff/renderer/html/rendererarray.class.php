@@ -1,6 +1,6 @@
 <?php
-namespace sfPhpDiff\Renderer\Html;
-use sfPhpDiff\Renderer\RendererAbstract;
+namespace PhpDiff\Renderer\Html;
+use PhpDiff\Renderer\RendererAbstract;
 
 /**
  * Base renderer for rendering HTML based diffs for PHP DiffLib.

@@ -1,6 +1,6 @@
 <?php
-namespace sfPhpDiff\Renderer\Html;
-use sfPhpDiff\Renderer\RendererAbstract;
+namespace PhpDiff\Renderer\Html;
+use PhpDiff\Renderer\RendererAbstract;
 
 /**
  * Side by Side HTML diff generator for PHP DiffLib.
