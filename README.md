@@ -1,7 +1,6 @@
-= PHP Diff Class =
+# PHP Diff Class #
 
-
-== Introduction ==
+## Introduction ##
 
 A comprehensive library for generating differences between
 two hashable objects (strings or arrays). Generated differences can be
@@ -15,28 +14,28 @@ The logic behind the core of the diff engine (ie, the sequence matcher)
 is primarily based on the Python difflib package. The reason for doing
 so is primarily because of its high degree of accuracy.
 
-== This Fork ==
+## This Fork ##
 The goal of this fork is to refactoring the existing code in order to load classes using the autoload function for frameworks like symfony.
 
-== Example Use ==
+## Example Use ##
 
 A quick usage example can be found in the example/ directory and under
 example.php.
 
 More complete documentation will be available shortly.
 
-== Merge files using jQuery ==
+## Merge files using jQuery ##
 
 Xiphe has build a jQuery plugin with that you can merge the compared
 files. Have a look at [jQuery-Merge-for-php-diff](https://github.com/Xiphe/jQuery-Merge-for-php-diff).
 
-== Todo ==
+## Todo ##
 
  * Ability to ignore blank line changes
  * 3 way diff support
  * Performance optimizations
 
-== License (BSD License) ==
+## License (BSD License) ##
 
 Copyright (c) 2009 Chris Boulton <chris.boulton@interspire.com>
 All rights reserved.
