@@ -1,4 +1,5 @@
 <?php
+namespace sfPhpDiff;
 /**
  * Sequence matcher for Diff
  *
@@ -40,7 +41,7 @@
  * @link http://github.com/chrisboulton/php-diff
  */
 
-class Diff_SequenceMatcher
+class SequenceMatcher
 {
 	/**
 	 * @var string|array Either a string or an array containing a callback function to determine if a line is "junk" or not.

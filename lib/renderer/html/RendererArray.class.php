@@ -1,4 +1,7 @@
 <?php
+namespace sfPhpDiff\Renderer\Html;
+use sfPhpDiff\Renderer\RendererAbstract;
+
 /**
  * Base renderer for rendering HTML based diffs for PHP DiffLib.
  *
@@ -40,9 +43,9 @@
  * @link http://github.com/chrisboulton/php-diff
  */
 
-require_once dirname(__FILE__).'/../Abstract.php';
+//require_once dirname(__FILE__).'/../Abstract.php';
 
-class Diff_Renderer_Html_Array extends Diff_Renderer_Abstract
+class RendererArray extends RendererAbstract
 {
 	/**
 	 * @var array Array of the default options that apply to this renderer.
