@@ -176,6 +176,9 @@ class Diff
 		return $this->groupedCodes;
 	}
 
+	/**
+	 * Static function to register the lib in spl_autoload
+	 */
 	public static function autoloadRegister(){
 		define('CLASS_DIR', realpath(dirname(__FILE__) . '/../'));
 		set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
