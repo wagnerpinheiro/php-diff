@@ -60,11 +60,14 @@ class RendererInline extends RendererArray
 			return $html;
 		}
 
+		$title_a = $this->diff->options['title_a'];
+		$title_b = $this->diff->options['title_b'];
+
 		$html .= '<table class="Differences DifferencesInline">';
 		$html .= '<thead>';
 		$html .= '<tr>';
-		$html .= '<th>Old</th>';
-		$html .= '<th>New</th>';
+		$html .= '<th>' . $title_a .  '</th>';
+		$html .= '<th>' . $title_b .  '</th>';
 		$html .= '<th>Differences</th>';
 		$html .= '</tr>';
 		$html .= '</thead>';

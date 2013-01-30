@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
@@ -9,6 +8,7 @@
 	<body>
 		<h1>PHP LibDiff - Examples</h1>
 		<hr />
+		<br />
 		<?php
 
 		// Include two sample files for comparison
@@ -17,8 +17,12 @@
 
 		// Options for generating the diff
 		$options = array(
-			//'ignoreWhitespace' => true,
-			//'ignoreCase' => true,
+			'context' => 1023,
+			'ignoreNewLines' => false,
+			'ignoreWhitespace' => false,
+			'ignoreCase' => false,
+			'title_a'=>'Old Version',
+			'title_b'=>'New Version'
 		);
 
 		require_once('../phpdiff/diff.class.php');
@@ -27,7 +31,7 @@
 		// Initialize the diff class
 		$diff = new \PhpDiff\Diff($a, $b, $options);
 
-		?>
+		?>		
 		<h2>Side by Side Diff</h2>
 		<?php
 
@@ -37,6 +41,9 @@
 		echo $diff->Render($renderer);
 
 		?>
+		<br />
+		<hr />
+		<br />
 		<h2>Inline Diff</h2>
 		<?php
 
@@ -46,6 +53,9 @@
 		echo $diff->render($renderer);
 
 		?>
+		<br />
+		<hr />
+		<br />
 		<h2>Unified Diff</h2>
 		<pre><?php
 
@@ -56,6 +66,9 @@
 
 		?>
 		</pre>
+		<br />
+		<hr />
+		<br />
 		<h2>Context Diff</h2>
 		<pre><?php
 
